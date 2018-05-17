@@ -39,13 +39,23 @@ const updateFavorite = (contactId) => {
     });
 }
 
+const getContacts = () => {
+    return new Promise((resolve, reject) => {
+        con.query(
+            'CALL get_contacts(); ', 
+            processor.processResults(resolve, reject)
+        );
+    });
+}
+
 
 
 module.exports = {
     addContact,
     updateContactDetails,
     deleteContact,
-    updateFavorite
+    updateFavorite,
+    getContacts
 };
 
 

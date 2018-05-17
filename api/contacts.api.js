@@ -50,7 +50,7 @@ const updateContact = (req, res) => {
 
 
 const updateIsFavorite = (req, res) => {
-    let contactId = req.body.contact_id;
+    let contactId = req.body.contactID;
     
     contacts
         .updateFavorite(contactId)
@@ -92,9 +92,28 @@ const deleteContact = (req, res) => {
 }
 
 
+const getContacts = (req, res) => {
+    
+    contacts
+        .getContacts()
+        .then((result) => {
+            //logger.info(req, result);
+
+            //contact_id = utils.arrayFirstElementToObject(result);
+            //res.status(201).json({contact_id});
+            res.status(201).json({result});
+        })
+        .catch((error) => { 
+            //logger.error(req, error);
+            res.status(500).json({ error });
+        });
+}
+
+
 module.exports = {
     addContact,
     updateContact,
     deleteContact,
-    updateIsFavorite
+    updateIsFavorite,
+    getContacts
 };

@@ -23,6 +23,8 @@ app.get('/', (req, res) => {
     res.send('Index Page');
 })
 
+app.get('/get_contacts', contactAPI.getContacts);
+
 app.post('/add_contact', contactAPI.addContact);
 
 app.put('/update_contact', contactAPI.updateContact);
