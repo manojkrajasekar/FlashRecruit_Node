@@ -1,5 +1,5 @@
 const contacts = require('../database/contacts.db');
-const utils = require('./utils');
+//const utils = require('./utils');
 
 const addContact = (req, res) => {
     let firstName = req.body.first_name;
