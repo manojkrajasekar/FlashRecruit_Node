@@ -50,7 +50,7 @@ const updateContact = (req, res) => {
 
 
 const updateIsFavorite = (req, res) => {
-    let contactId = req.body.contactID;
+    let contactId = req.body.contactId;
     
     contacts
         .updateFavorite(contactId)

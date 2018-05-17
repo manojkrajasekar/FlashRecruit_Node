@@ -11,13 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(cors());
 
-
-
 app.listen(port, (req, res) => console.log('Running on port 8080'));
-
-app.get('/get_contact_list', (req, res) => {
-    res.send('HAI');
-})
 
 app.get('/', (req, res) => {
     res.send('Index Page');

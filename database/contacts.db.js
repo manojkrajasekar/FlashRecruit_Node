@@ -32,7 +32,7 @@ const deleteContact = (contactId) => {
 const updateFavorite = (contactId) => {
     return new Promise((resolve, reject) => {
         con.query(
-            'SET @out = null; CALL update_favorite(?, @OUT); SELECT @out as is_favorite', 
+            'CALL update_favorite(?);', 
             [contactId], 
             processor.processUpdateResults(resolve, reject)
         );
