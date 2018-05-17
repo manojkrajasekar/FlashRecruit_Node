@@ -71,11 +71,7 @@ const updateIsFavorite = (req, res) => {
 
 const deleteContact = (req, res) => {
     let contactId = req.body.contact_id;
-    let firstName = req.body.first_name;
-    let lastName = req.body.last_name;
-    let emailID = req.body.email;
-
-
+    
     contacts
         .deleteContact(contactId)
         .then((result) => {
