@@ -1,5 +1,5 @@
 const contacts = require('../database/contacts.db');
-//const utils = require('./utils');
+
 
 const addContact = (req, res) => {
     let firstName = req.body.first_name;
@@ -8,19 +8,12 @@ const addContact = (req, res) => {
     let contactUid  = req.body.contact_uid;
     let errorMessage;
 
-    
-
     contacts
         .addContact(firstName, lastName, emailID, contactUid)
         .then((result) => {
-            //logger.info(req, result);
-
-            //contact_id = utils.arrayFirstElementToObject(result);
-            //res.status(201).json({contact_id});
             res.status(201).json(result);
         })
         .catch((error) => { 
-            //logger.error(req, error);
             res.status(500).json({ error });
         });
 }
@@ -36,10 +29,6 @@ const updateContact = (req, res) => {
     contacts
         .updateContactDetails(contactId, firstName, lastName, emailID)
         .then((result) => {
-            //logger.info(req, result);
-
-            //contact_id = utils.arrayFirstElementToObject(result);
-            //res.status(201).json({contact_id});
             res.status(201).json({result});
         })
         .catch((error) => { 
@@ -55,14 +44,9 @@ const updateIsFavorite = (req, res) => {
     contacts
         .updateFavorite(contactId)
         .then((result) => {
-            //logger.info(req, result);
-
-            //contact_id = utils.arrayFirstElementToObject(result);
-            //res.status(201).json({contact_id});
             res.status(201).json({result});
         })
         .catch((error) => { 
-            //logger.error(req, error);
             res.status(500).json({ error });
         });
 }
@@ -75,14 +59,9 @@ const deleteContact = (req, res) => {
     contacts
         .deleteContact(contactId)
         .then((result) => {
-            //logger.info(req, result);
-
-            //contact_id = utils.arrayFirstElementToObject(result);
-            //res.status(201).json({contact_id});
             res.status(201).json({result});
         })
         .catch((error) => { 
-            //logger.error(req, error);
             res.status(500).json({ error });
         });
 }
@@ -93,14 +72,9 @@ const getContacts = (req, res) => {
     contacts
         .getContacts()
         .then((result) => {
-            //logger.info(req, result);
-
-            //contact_id = utils.arrayFirstElementToObject(result);
-            //res.status(201).json({contact_id});
             res.status(201).json({result});
         })
         .catch((error) => { 
-            //logger.error(req, error);
             res.status(500).json({ error });
         });
 }

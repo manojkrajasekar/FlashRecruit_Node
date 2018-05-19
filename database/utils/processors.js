@@ -1,3 +1,5 @@
+// The promise returned form the result of the stored procedure call is resolved here
+
 const processResults = (resolve, reject) => (error, results, fields) => {
     if (error) {
         reject(error);

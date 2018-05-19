@@ -1,15 +1,10 @@
 const mysql = require('mysql');
 const logger = require('../../utils/logger');
+const mysqlConfig = require('../../config/mysql.config');
 
-var con = mysql.createConnection({
-    "host": "localhost",
-    "user": "root",
-    "password": "Rajasekar*1",
-    "port": 3306,
-    "multipleStatements": true,
-    "databaseName": "contactlist"
-});
+const con = mysql.createConnection(mysqlConfig);
 
+//Connection with a specific database is made here, and checked.
 con.connect((err) => {
     if (err) {
         logger.error("Could not connect to mql server!");

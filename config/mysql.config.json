@@ -1,8 +1,8 @@
 {
-    "host": "localhost:3306",
-    "user": "manoj",
+    "host": "localhost",
+    "user": "root",
     "password": "Rajasekar*1",
     "port": 3306,
     "multipleStatements": true,
-    "databaseName": "photoapp"
+    "databaseName": "contactlist"
 }

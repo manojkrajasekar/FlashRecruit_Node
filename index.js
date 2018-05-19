@@ -13,16 +13,17 @@ app.use(cors());
 
 app.listen(port, (req, res) => console.log('Running on port 8080'));
 
-app.get('/', (req, res) => {
-    res.send('Index Page');
-})
-
+// Display Contacts API End points
 app.get('/get_contacts', contactAPI.getContacts);
 
+// Add Contacts API End points
 app.post('/add_contact', contactAPI.addContact);
 
+// Update Contacts API End points
 app.put('/update_contact', contactAPI.updateContact);
 
+// Update favorite contact API End points
 app.put('/update_favorite', contactAPI.updateIsFavorite);
 
+// Delete contact API End points
 app.delete('/delete_contact', contactAPI.deleteContact);
